@@ -1,7 +1,23 @@
 console.log("Start the party 🚴🏼‍♂️");
 
 // control the auto refresh rate -> 1000 = 1 second
-var refreshRate = 12000; // 5 seconds
+var refreshRate = 12000; // 12 seconds
+
+if (localStorage.getItem("refreshRate")) {
+  refreshRate = localStorage.getItem("refreshRate");
+} else {
+  localStorage.setItem("refreshRate", refreshRate);
+}
+let refSelectVal = parseInt(refreshRate);
+$("#refresh-select").val(refSelectVal);
+
+//
+//
+//
+$("#refresh-select").change(function() {
+  refreshRate = $(this).val();
+  localStorage.setItem("refreshRate", refreshRate);
+});
 
 // Automatically reload the browser
 setInterval(function() {
@@ -16,7 +32,7 @@ $("#foot")
   .css({
     // serves a random image from this collection on Unsplash.com
     "background-image":
-      "url(https://source.unsplash.com/1600x900/?nature,water,snow,surf,ironman,cycling)"
+      "url(https://source.unsplash.com/1600x900/?nature,water,snow,surf,ironman,cycling,mountains)"
   })
   .fadeIn(1500);
 
