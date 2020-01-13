@@ -1,7 +1,7 @@
 console.log("Start the party 🚴🏼‍♂️");
 
 // control the auto refresh rate -> 1000 = 1 second
-var refreshRate = 12000; // 12 seconds
+var refreshRate = 10000; // 10 seconds
 
 if (localStorage.getItem("refreshRate")) {
   refreshRate = localStorage.getItem("refreshRate");
@@ -17,10 +17,14 @@ $("#refresh-select").val(refSelectVal);
 $("#refresh-select").change(function() {
   refreshRate = $(this).val();
   localStorage.setItem("refreshRate", refreshRate);
+  clearInterval(mainInterval);
+  setInterval(function() {
+    location.reload();
+  }, refreshRate);
 });
 
 // Automatically reload the browser
-setInterval(function() {
+let mainInterval = setInterval(function() {
   location.reload();
 }, refreshRate);
 
@@ -29,14 +33,10 @@ $("#foot").hide();
 
 // Get a random image from Unsplash and fade it in on load
 $("#foot")
-  .css({
-    // serves a random image from this collection on Unsplash.com
-    "background-image":
-      "url(https://source.unsplash.com/1600x900/?nature,water,snow,surf,ironman,cycling,mountains)"
-  })
-  .fadeIn(1500);
+  .css({"background-image": "url(https://source.unsplash.com/1600x900/?nature,water,snowboard,surf,ironman,cycling,running,mountains)"
+  }).fadeIn(1500);
 
-// //
+//
 // $.get("https://www.cloudflare.com/cdn-cgi/trace", function(data) {
 //   console.log("🟣 We got: ");
 //   console.log(data);
