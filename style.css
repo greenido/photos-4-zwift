@@ -1,0 +1,59 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.trigger {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+}
+.trigger a {
+  font-size: 2rem;
+  color: white;
+  transition: color 200ms ease;
+}
+.trigger a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#foot {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+
+.title {
+  margin: 0;
+  color: white;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-family: "Cabin", sans-serif;
+  letter-spacing: 2px;
+}
+.title h1 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+}
+.title h2 {
+  /*   background: white; */
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin: 0;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
