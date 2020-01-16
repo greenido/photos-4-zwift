@@ -37,11 +37,11 @@ let mainInterval = setInterval(function() {
 // Hide the images on load
 $("#foot").hide();
 
-// Get a random image from Unsplash and fade it in on load
+// Get a random image from Unsplash and fade it in on load (nature)
 $("#foot")
   .css({
     "background-image":
-      "url(https://source.unsplash.com/1600x900/?nature,water,snowboard,surf,ironman,cycling,running,mountains)"
+      "url(https://source.unsplash.com/1600x900/?nature,snowboard,surf,ironman,cycling,running,beach,animals)"
   })
   .fadeIn(1000);
 
